@@ -1,0 +1,17 @@
+irb(main):006:0> pen2=Pen.new(type:"felt", ink:"blue", cost:5)
+Traceback (most recent call last):
+        2: from (irb):6
+        1: from (irb):6:in `rescue in irb_binding'
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'felt'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Pen.inheritance_column to use another column for that information.)
+irb(main):007:0> db migrate
+Traceback (most recent call last):
+        2: from (irb):7
+        1: from (irb):7:in `rescue in irb_binding'
+NameError (undefined local variable or method `migrate' for main:Object)
+irb(main):008:0> exit
+~/actualize/rails_apps/pens_app$ Pen.new
+-bash: Pen.new: command not found
+~/actualize/rails_apps/pens_app$ rails db:migrate
+~/actualize/rails_apps/pens_app$ Pen.new
+-bash: Pen.new: command not found
+~/actualize/rails_apps/pens_app$
